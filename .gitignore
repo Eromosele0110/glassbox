@@ -1,6 +1,9 @@
 # --- Compiled binaries/libraries ---
-/erst
+/glassbox
 *.exe
+*.dll
+*.dylib
+*.so
 /simulator/target/
 node_modules/
 dist/
@@ -12,10 +15,6 @@ bin/
 .env.example
 .cursorrules
 Thumbs.db
-*.exe
-*.dll
-*.dylib
-*.so
 
 # --- Logs and Temporary Files ---
 *.log
@@ -31,18 +30,19 @@ test_output.txt
 /vendor/
 coverage.out
 coverage/
+coverage.html
+.gocache/
 
 # --- Rust specific ---
 **/*.rs.bk
 
 # --- Tools/Artifacts ---
-ishus.py
 create_phase9.py
+create_phase10.py
 .gemini/
 .idea/
 .vscode/
 
-ishus.py
 # Temporary docs/notes
 *_SUMMARY.md
 PR_MESSAGE*.md
@@ -52,8 +52,13 @@ CHECKLIST.md
 MAINTAINER_NEXT_STEPS.md
 XDR_GENERATOR_PR_SUMMARY.md
 
+# --- Node/Test artifacts ---
 node_modules
 out
+test-results/
+**/__snapshots__/
+*.snap
+
 # --- Documentation (User specific settings) ---
 # /external/
 # /*.md
@@ -73,20 +78,7 @@ commit_309*.next
 !tsconfig*.json
 !perf_baseline.json
 
-.gocache
-
-ishus.py
-
-ishus-t.py
-
-ishust.py
-
-create_phase9.py
-
-create_phase10.py
-
-# --- Windows build artifacts & debug symbols (#1184) ---
-# MSVC / Visual Studio
+# --- Windows build artifacts & debug symbols ---
 *.pdb
 *.ilk
 *.idb
@@ -94,12 +86,10 @@ create_phase10.py
 *.lib
 *.exp
 *.map
-# MSVC incremental linker files
 *.vc.db
 *.vc.vc.db
 *.vcxproj.user
 *.vcxproj.filters
-# MSBuild / VS generated folders
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -108,17 +98,12 @@ x86/
 [Aa][Rr][Mm]64/
 ipch/
 *.aps
-# CodeView debug info embedded in object files
 *.pchi
-# Windows-specific crash/dump artefacts
 *.dmp
 *.stackdump
-# MinGW / Cygwin
 *.a
 *.o
-# Generated resource files
 Resource.rc
-# Windows Installer artefacts
 *.msi
 *.msix
 *.cab
